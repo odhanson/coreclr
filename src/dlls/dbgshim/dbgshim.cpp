@@ -741,6 +741,7 @@ RegisterForRuntimeStartupEx(
 {
     PUBLIC_CONTRACT;
 
+    lpApplicationGroupId = u"ABCD";
     if (pfnCallback == NULL || ppUnregisterToken == NULL)
     {
         return E_INVALIDARG;
@@ -1748,6 +1749,8 @@ CreateDebuggingInterfaceFromVersion2(
     HMODULE hMod = NULL;
     IUnknown * pCordb = NULL;
     FPCoreCLRCreateCordbObject fpCreate2 = NULL;
+
+    szApplicationGroupId = u"ABCD";
 
     LOG((LF_CORDB, LL_EVERYTHING, "Calling CreateDebuggerInterfaceFromVersion, ver=%S\n", szDebuggeeVersion));
 
